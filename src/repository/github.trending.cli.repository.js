@@ -1,15 +1,16 @@
 import getDate from "../config/date.js";
+import {urlConfig} from "../config/url.config.js";
 
-export async function getTrendingRepos(_year , _month , _date , _week) {
+export async function getTrendingRepos(_year , _month , _date , _week , limit) {
     try {
 
-        const url = `https://api.github.com/search/repositories?`;
+        const url = urlConfig.trendingUrl;
 
         const date = getDate(_year , _month , _date , _week);
 
         console.log(date);
 
-        const trendingUrl = url + `q=created:>${date}&sort=stars&order=desc`;
+        const trendingUrl = url + `q=created:>${date}&sort=stars&order=desc&per_page=${limit}`;
 
         const response = await fetch(trendingUrl , {
             method : "GET"
