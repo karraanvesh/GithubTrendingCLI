@@ -12,7 +12,11 @@
 
 `npm install`
 
-4. Run the index.js
+4. Create a .env file in the root directory of the project and add the below environment variable in the .env file
+
+`githubTrendingUrl=https://api.github.com/search/repositories?`
+
+5. Run the index.js
 
 `Below are the list of commands to run the project`
 
